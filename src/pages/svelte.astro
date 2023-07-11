@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Counter from '../components/counter.svelte'
+---
+
+<Layout title="Welcome to AAAAA.">
+    <h1>Welcome to <span class="text-gradient">svelte</span></h1>
+    <p>you can count things!</p>
+    <Counter client:load/>
+    <br>
+    <a href=`${import.meta.env.BASE_URL}`>Go back...</a>
+</Layout>
+
+<style>
+.text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+}
+</style>

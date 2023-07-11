@@ -4,12 +4,14 @@ export interface Props {
 	body: string;
 	href: string;
 }
+import {joinUrlKeepBase} from '../modules/site-url-with-base'
 
 const { href, title, body } = Astro.props;
+const newhref = joinUrlKeepBase(href);
 ---
 
 <li class="link-card">
-	<a href={href}>
+	<a href={newhref}>
 		<h2>
 			{title}
 			<span>&rarr;</span>

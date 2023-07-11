@@ -1,0 +1,42 @@
+---
+layout: '../layouts/Layout.astro'
+title: 'My Markdown page'
+---
+import Counter from '../components/counter.svelte'
+import {site_url_with_base} from '../modules/site-url-with-base.js'
+
+# Main (my title is '{frontmatter.title}')
+
+## Intro
+This is **Markdown.**
+Can I get some cool things like bulleted lists?
+* a
+* b
+* c
+  * foo
+  * bar
+
+## Code
+some code:
+```python
+from numpy.linalg import norm
+import numpy as np
+a = np.random.random((7,3))
+print(f"a:\n{a}\nnorm:{norm(a, axis=1)}")
+from numpy.linalg import norm
+import numpy as np
+a = np.random.random((7,3))
+print(f"a:\n{a}\nnorm:{norm(a, axis=1)}")
+from numpy.linalg import norm
+import numpy as np
+a = np.random.random((7,3))
+print(f"a:\n{a}\nnorm:{norm(a, axis=1)}")
+```
+
+## Extra features idk
+* that is <u>underlined</u> and that is <del>deleted</del>
+* go back to the [Intro](#intro) section
+
+## Extra features mk 2
+* you can use components (astro or frameworks) and stuff <Counter client:load />
+* link to go back (created with javascript): <a href={site_url_with_base}>Home</a>
